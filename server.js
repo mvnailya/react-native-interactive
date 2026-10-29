@@ -57,4 +57,4 @@ let full=path.resolve(publicDir,file);if(!full.startsWith(publicDir+path.sep)&&f
 fs.readFile(full,(err,bytes)=>{if(err)return send(res,404,{error:'Файл не найден'});res.writeHead(200,{'Content-Type':MIME[path.extname(full)]||'application/octet-stream','Cache-Control':'no-cache'});res.end(bytes)})
 }catch(e){console.error(e);if(!res.headersSent)send(res,500,{error:'Ошибка сервера'})}
 });
-server.listen(PORT,HOST,()=>{console.log('\n=== Интерактивная лекция React Native ===');console.log('Адрес на этом компьютере: http://localhost:'+PORT);console.log('КОД ЗАНЯТИЯ: '+ROOM);console.log('ПАРОЛЬ ПРЕПОДАВАТЕЛЯ: '+TEACHER_KEY);console.log('Панель преподавателя: http://localhost:'+PORT+'/teacher.html');console.log('Для студентов используйте локальный IP компьютера преподавателя, порт '+PORT);console.log('Для постоянных кодов: ROOM=... TEACHER_KEY=... node server.js\n')});
+server.listen(PORT,HOST,()=>{console.log('\n=== Интерактивная лекция React Native ===');console.log('Адрес на этом компьютере: http://localhost:'+PORT);console.log('КОД ЗАНЯТИЯ: '+ROOM);});
